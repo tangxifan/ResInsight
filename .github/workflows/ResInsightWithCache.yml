@@ -172,6 +172,7 @@ jobs:
               -D RESINSIGHT_GRPC_PYTHON_EXECUTABLE=${{ steps.python-path.outputs.PYTHON_EXECUTABLE }}
               -D RESINSIGHT_GRPC_DOWNLOAD_PYTHON_MODULE=true
               -D VCPKG_AUTO_INSTALL=true
+              -D VCPKG_TARGET_TRIPLET=${{ matrix.config.vcpkg-triplet }}
               -D CMAKE_TOOLCHAIN_FILE=${{ matrix.config.cmake-toolchain }}
               -G Ninja
             RESULT_VARIABLE result
